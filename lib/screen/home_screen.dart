@@ -1,4 +1,7 @@
+import 'package:festival_app/models/category_model.dart';
 import 'package:flutter/material.dart';
+
+import '../uttils/global.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,50 +20,55 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Festival \n studio"),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Row(
-            children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 2,
-                    )),
-                child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "  14\n Jan ",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    )),
-              ),
-              SizedBox(width: 10),
-              Text(
-                "Makar Sankranti (Uttrayan)",
-                style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        height: 130,
-                        width: 90,
-                        decoration: BoxDecoration(color: Colors.blue),
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, mainAxisExtent: 240),
+        itemCount: Global.g1.categoryList.length,
+        itemBuilder: (context, index) {
+          return containerTile(Global.g1.categoryList[index]);
+          // return containerTile(Global.g1.categoryList [index]);
+        },
       ),
     ));
+  }
+
+  Container containerTile(categoryModel c1) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        // color: c1.color,
+      ),
+      margin: EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: (){
+          Navigator.pushNamed(context, 'edit');
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                "${c1.name}",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Image.asset(
+                '${c1.image}',
+                height: 150,
+                width: 150,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
