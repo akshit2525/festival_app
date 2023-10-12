@@ -9,52 +9,42 @@ class Global {
 
     categoryModel(
         name: "Uttrayan",
-        image: "assets/image/uttrayan.png",
-        color: Colors.amber),
+        image: "assets/image/uttrayan.png",),
 
     categoryModel(
         name: "Shivratri",
-        image: "assets/image/shivratri.png",
-        color: Colors.amber),
+        image: "assets/image/shivratri.png",),
 
     categoryModel(
         name: "Holi",
-        image: "assets/image/holi.png",
-        color: Colors.greenAccent),
+        image: "assets/image/holi.png",),
     categoryModel(
         name: "Rakshabandhan",
-        image: "assets/image/rakshabandhan.png",
-        color: Colors.pink),
+        image: "assets/image/rakshabandhan.png",),
 
     categoryModel(
         name: "Janmashtami",
-        image: "assets/image/janmashtami.png",
-        color: Colors.blue),
+        image: "assets/image/janmashtami.png",),
 
     categoryModel(
         name: "Ganesha",
-        image: "assets/image/ganesha.png",
-        color: Colors.blue),
+        image: "assets/image/ganesha.png",),
 
     categoryModel(
         name: "Navratri",
-        image: "assets/image/navratri.png",
-        color: Colors.amber),
+        image: "assets/image/navratri.png",),
 
     categoryModel(
         name: "Diwali",
-        image: "assets/image/diwali.png",
-        color: Colors.teal),
+        image: "assets/image/diwali.png",),
 
     categoryModel(
         name: "New Year",
-        image: "assets/image/newyear.png",
-        color: Colors.yellowAccent),
+        image: "assets/image/newyeaar.png",),
 
     categoryModel(
         name: "Natal",
-        image: "assets/image/natal.png",
-        color: Colors.green),
+        image: "assets/image/natal.png",),
 
   ];
 

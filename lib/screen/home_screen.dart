@@ -16,8 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text("Festival \n studio"),
+        backgroundColor: Colors.lightBlueAccent,
+        title: const Text("Festival studio"),
         centerTitle: true,
       ),
       body: GridView.builder(
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Align(

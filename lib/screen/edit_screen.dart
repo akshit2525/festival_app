@@ -19,7 +19,6 @@ class _EditScreenState extends State<EditScreen> {
         child: Scaffold(
           appBar: AppBar(
             actions: [
-              // IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
               SizedBox(
                 width: 30,
               ),
@@ -53,72 +52,69 @@ class _EditScreenState extends State<EditScreen> {
               ),
             ],
           ),
-          body: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: MediaQuery
-                            .of(context)
-                            .size
-                            .height * 0.50,
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width * 1.00,
-                        decoration: BoxDecoration(
-                          color: Global.g1.colorList[i],
-                          borderRadius: BorderRadius.circular(10),
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Align(
+                    alignment: Alignment.topCenter,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height * 0.50,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 1.00,
+                          decoration: BoxDecoration(
+                            color: Global.g1.colorList[i],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20,),
+                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 100,
+                          child: ListView.builder(scrollDirection: Axis.horizontal,
+                            itemCount: Global.g1.imageList.length,
+                            itemExtent:160,
+                            itemBuilder: (context, index) =>
+                                Container(
+                                  margin: EdgeInsets.all(5),
+                                  height:
+                                  MediaQuery
+                                      .of(context)
+                                      .size
+                                      .height *
+                                      0.2,
+                                  width: MediaQuery
+                                      .of(context)
+                                      .size
+                                      .width *
+                                      0.2,
+                                  color: Colors.red,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/image/bg/${Global.g1
+                                          .imageList[index]}',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
 
-                      ListView.builder(scrollDirection: Axis.horizontal,
-                        itemCount: Global.g1.imageList.length,
-                        itemExtent: 100,
-                        itemBuilder: (context, index) =>
-                            // Container(
-                            //   margin: EdgeInsets.all(5),
-                            //   height:
-                            //   MediaQuery
-                            //       .of(context)
-                            //       .size
-                            //       .height *
-                            //       0.2,
-                            //   width: MediaQuery
-                            //       .of(context)
-                            //       .size
-                            //       .width *
-                            //       0.2,
-                            //   child: InkWell(
-                            //     onTap: () {},
-                            //     child: Image.asset(
-                            //       'assets/image/bg/${Global.g1
-                            //           .imageList[index]}',
-                            //       fit: BoxFit.cover,
-                            //     ),
-                            //   ),
-                            // ),
-                      ),
-                      // Container(
-                      //   height: MediaQuery.of(context).size.height * 0.20,
-                      //   width: MediaQuery.of(context).size.width * 1.00,
-                      //   decoration: BoxDecoration(
-                      //     color: Global.g1.colorList[i],
-                      //     borderRadius: BorderRadius.circular(10),
-                      //   ),
-                      // ),
-
-                    ],
                   ),
-
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }
